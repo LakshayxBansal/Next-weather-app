@@ -22,9 +22,8 @@ export default function SearchBar(){
         try{
             const response = await axios.get(`/api/fetchWeather?city=${city}`);
             setWeather(response.data);
-            setError("");
+            setCity("");
         }catch (err: any) {
-            setWeather(null);
             if (err.response && err.response.data.error) {
               alert(err.response.data.error);
             } else {
