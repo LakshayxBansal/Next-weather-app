@@ -27,9 +27,6 @@ export default function SearchBar(){
 
 
         try{
-            setTimeout(async () => {
-                console.log("Timeout over");
-            }, 10000);
             const response = await axios.get(`/api/fetchWeather?city=${city}`);
             
             setWeather(response.data);
